@@ -1,0 +1,20 @@
+function sortear() {
+  // Gerar um número aleatório de 0 a 14, com probabilidade de 10% para o número 0
+  let numero = Math.random() < 0.1 ? 0 : Math.floor(Math.random() * 14) + 1;
+  
+  // Exibir o número sorteado na página
+  document.getElementById("numero").textContent = numero;
+  
+  // Obter a hora atual e formatá-la como uma string legível
+  let agora = new Date();
+  let hora = agora.getHours();
+  let minutos = agora.getMinutes();
+  let segundos = agora.getSeconds();
+  let horario = hora + ":" + minutos + ":" + segundos;
+  
+  // Exibir o horário do sorteio na página
+  document.getElementById("horario").textContent = horario;
+}
+
+// Iniciar o sorteio a cada 30 segundos
+setInterval(sortear, 30000);
